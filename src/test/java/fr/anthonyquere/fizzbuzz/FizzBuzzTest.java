@@ -1,5 +1,7 @@
 package fr.anthonyquere.fizzbuzz;
 
+import jdk.jfr.Name;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FizzBuzzTest {
 
     @Test
+    @DisplayName("Should return empty list when count is 0")
     void should_return_empty_list_when_count_is_0() {
         var count = 0;
 
@@ -17,6 +20,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("Should return n elements when count is n")
     void should_return_n_elements_when_count_is_n() {
         var count = 10;
 
@@ -26,6 +30,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("should contain fizz for elements with index multiple of 3")
     void should_contain_fizz_for_elements_with_index_multiple_of_3() {
         var count = 20;
 
@@ -41,6 +46,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("should not contain fizz for elements with index not multiple of 3")
     void should_not_contain_fizz_for_elements_with_index_not_multiple_of_3() {
         var count = 10;
 
@@ -57,6 +63,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("should contain buzz for elements with index multiple of 5")
     void should_contain_buzz_for_elements_with_index_multiple_of_5() {
         var count = 20;
 
@@ -70,6 +77,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("should not contai buzz for elements with index not multiple of 5")
     void should_not_contain_buzz_for_elements_with_index_not_multiple_of_5() {
         var count = 10;
 
@@ -87,6 +95,7 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("should contain fizzbuzz for elements with index multiple of 3 and 5")
     void should_contain_fizzbuzz_for_elements_with_index_multiple_of_3_and_5() {
         var count = 20;
 
