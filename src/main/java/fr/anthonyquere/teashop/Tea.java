@@ -1,47 +1,22 @@
 package fr.anthonyquere.teashop;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@AllArgsConstructor
 public class Tea {
     private String name;
     private int steepingTimeSeconds;
     private int idealTemperatureCelsius;
-    private boolean isLoose; // loose leaf vs tea bag
+    private boolean loose; // loose leaf vs tea bag
 
-    public Tea(String name, int steepingTimeSeconds, int idealTemperatureCelsius, boolean isLoose) {
-        this.name = name;
-        this.steepingTimeSeconds = steepingTimeSeconds;
-        this.idealTemperatureCelsius = idealTemperatureCelsius;
-        this.isLoose = isLoose;
-    }
+    // Changement du non puisque c'est un attribut private et que lombok va creer les methode isLoose() et setLoose() puisque c'est un type boolean
+    // L'utilisation de Lombok qui permet de générer des Setter et des Getter est plus simple et garantie que le code soit operationnel et sans bug
+    // L'utilisation du AllArgsConstructor permet de générer un constructeur avec tout les paramettre
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getSteepingTimeSeconds() {
-        return steepingTimeSeconds;
-    }
-
-    public void setSteepingTimeSeconds(int steepingTimeSeconds) {
-        this.steepingTimeSeconds = steepingTimeSeconds;
-    }
-
-    public int getIdealTemperatureCelsius() {
-        return idealTemperatureCelsius;
-    }
-
-    public void setIdealTemperatureCelsius(int idealTemperatureCelsius) {
-        this.idealTemperatureCelsius = idealTemperatureCelsius;
-    }
-
-    public boolean isLoose() {
-        return isLoose;
-    }
-
-    public void setLoose(boolean loose) {
-        isLoose = loose;
-    }
+    // ces changement evitent de devoir creer des test pour toutes ces methodes et ca allege visuelement le code ce qui le rend plus simple a comprendre et donc plus maintenable
 }
