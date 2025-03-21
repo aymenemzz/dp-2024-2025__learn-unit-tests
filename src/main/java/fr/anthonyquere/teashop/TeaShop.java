@@ -1,15 +1,20 @@
 package fr.anthonyquere.teashop;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@RequiredArgsConstructor // creer des contructeurs avec 1 seul parametre pour tout les attrtibut de la class, les autres attribut sont instancié avec les valeurs par defaut ou 0/false/null en fonction du type d'objet
 public class TeaShop {
     private final Map<String, Tea> availableTeas = new HashMap<>();
     private int waterTemperature;
-
-    public TeaShop(int defaultWaterTemperature) {
-        this.waterTemperature = defaultWaterTemperature;
-    }
 
     public void addTea(Tea tea) {
         availableTeas.put(tea.getName().toLowerCase(), tea);
